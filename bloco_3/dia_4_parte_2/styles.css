@@ -1,0 +1,64 @@
+body{
+  max-width: 80%;
+  margin: auto;
+  background-color: aqua;
+  font-family: Oswald,sans-serif
+}
+body h1{
+  font-size: 50px;
+  margin-bottom: 0.5%;
+  background-color: rgb(193, 126, 219);
+  color:gray;
+  border-radius: 5px;
+}
+nav a{
+  color: black;
+  text-decoration: none;
+}
+.inicio li{
+  max-width: 100%;
+  display: inline-block;
+  text-align: center;
+  margin-left: 18%;
+  font-size: large;
+  margin-top: 1.5%;;
+  border-radius: 5px;
+}
+ul{
+  margin: auto;
+  height: 50px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+.article,h1{
+  text-align: center;
+  margin: auto;
+  
+}
+table{
+  text-align: left;
+  margin: auto;
+}  
+.caixa1{
+  border:1px solid black;
+  border-radius: 5px;
+}
+.caixa2{
+  margin-top: 3%;
+  border:1px solid black;
+}
+.caixa2 p{
+  text-align: justify;
+  margin-left: 2%;
+  margin-right: 2%;
+  
+}
+#foto{
+  max-width: 600px;
+  padding: auto;
+}
+.lastbox{
+  margin-top: 5%;
+  border: 1px solid black;
+  text-align: end;
+}
