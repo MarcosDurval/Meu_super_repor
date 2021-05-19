@@ -1,8 +1,9 @@
 body{
-  max-width: 80%;
+  background-image: url(https://www.publicdomainpictures.net/pictures/180000/velka/sea-background-texture-1466765405Ve8.jpg);
   margin: auto;
   background-color: aqua;
-  font-family: Oswald,sans-serif
+  font-family: Oswald,sans-serif;
+  width: 80%;
 }
 body h1{
   font-size: 50px;
@@ -38,27 +39,39 @@ ul{
 table{
   text-align: left;
   margin: auto;
-}  
-.caixa1{
-  border:1px solid black;
-  border-radius: 5px;
 }
-.caixa2{
-  margin-top: 3%;
-  border:1px solid black;
+table td{
+  margin-left: 2px;
 }
-.caixa2 p{
-  text-align: justify;
-  margin-left: 2%;
-  margin-right: 2%;
-  
-}
+
 #foto{
   max-width: 600px;
-  padding: auto;
+  padding: 1px
+}
+#foto1{
+  max-width: 500px;
+  padding: 4px;
 }
 .lastbox{
+  border-radius: 5px;
   margin-top: 5%;
   border: 1px solid black;
-  text-align: end;
+  text-align: center;
+}
+.caixa2, .bloco {
+  padding: 30px;
+  border: 1px solid black;
+  width: 40%;
+  display: inline-block;
+  vertical-align: top;
+  margin: 1%;
+}
+aside {
+  left: 87%;
+  top: 30%;
+  position: fixed;
+}
+main{
+  border-radius: 8px; 
+  background-color:rgba(255, 255, 255, 0.459);
 }
