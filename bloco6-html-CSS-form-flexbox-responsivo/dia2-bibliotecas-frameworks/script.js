@@ -52,5 +52,4 @@ for (index = 0; index < estados.length; index += 1) {
 
 //   picker.setMoment(moment().dayOfYear(366));
 
-document.getElementById('date').DatePickerX.init();
-
+let picker = new Pikaday({ field: document.getElementById('datepicker') });
