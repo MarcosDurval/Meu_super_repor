@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="jquery-3.6.0.min.js"></script>
+  <script src="bootstrap-5.0.1-dist/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/DatePickerX/dist/css/DatePickerX.min.css">
+  <link rel="stylesheet" href="bootstrap-5.0.1-dist/css/bootstrap.min.css">
+</head>
+
+<body>
+  <form action="" method="GET">
+    <fieldset>
+      <div class="container">
+        <header>
+          <p class="text-center display-1">titulo</p>
+        </header>
+      </div>
+    </fieldset>
+    <fieldset>
+      <div class="form-group">
+        <label for="nome">Nome: </label>
+        <input class="form-control" type="text" maxlength="40" required id="nome"> <!-- maxlength limita o número de caracteres -->
+      </div>
+      <div class="container ">
+        <label for="email" class="form-label">email: </label>
+        <input type="email" maxlength="50" required id="email">
+      </div>
+      <div class="container ">
+        <label for="cpf" class="form-label">cpf: </label>
+        <input type="text" maxlength="11" required placeholder="digite apenas os numeros" id="cpf">
+      </div>
+    </fieldset>
+    <fieldset class="container">
+      <div class="container">
+        <label for="Endereço" class=" form-control">Endereço:</label>
+        <input type="text" maxlength="200" id="Endereço">
+      </div>
+      <select id="selec" required></select>
+      <label for="casa">casa</label>
+      <input type="radio" name="casa" id="casa">
+      <label for="ape">Apartamento</label>
+      <input type="radio" name="ape" id="ape">
+    </fieldset>
+
+    <fieldset >
+      <div class="container">
+        <textarea maxlength="1000" rows="10" cols="50" placeholder="Resumo do currículo" required></textarea>
+        <label for="cargo">Digite seu cargo</label>
+        <input type="text" maxlength="40" required placeholder="Digite aqui" name="cargo" id="cargo">
+        <textarea maxlength="500" cols="30" rows="10" placeholder="Descrição do cargo"></textarea>
+        <br>
+        <label for="data">Data de inicio:</label>
+        <input type="text" id="date">
+        <button type="submit">submit</button>
+        <button type="reset">Apagar</button>
+      </div>
+    </fieldset>
+
+  </form>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+  <script src="node_modules/pikaday/pikaday.js"></script> -->
+  <script src="DatePickerX/dist/js/DatePickerX.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
