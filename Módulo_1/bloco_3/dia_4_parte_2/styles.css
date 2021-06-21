@@ -1,0 +1,77 @@
+body{
+  background-image: url(https://www.publicdomainpictures.net/pictures/180000/velka/sea-background-texture-1466765405Ve8.jpg);
+  margin: auto;
+  background-color: aqua;
+  font-family: Oswald,sans-serif;
+  width: 80%;
+}
+body h1{
+  font-size: 50px;
+  margin-bottom: 0.5%;
+  background-color: rgb(193, 126, 219);
+  color:gray;
+  border-radius: 5px;
+}
+nav a{
+  color: black;
+  text-decoration: none;
+}
+.inicio li{
+  max-width: 100%;
+  display: inline-block;
+  text-align: center;
+  margin-left: 18%;
+  font-size: large;
+  margin-top: 1.5%;;
+  border-radius: 5px;
+}
+ul{
+  margin: auto;
+  height: 50px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+.article,h1{
+  text-align: center;
+  margin: auto;
+  
+}
+table{
+  text-align: left;
+  margin: auto;
+}
+table td{
+  margin-left: 2px;
+}
+
+#foto{
+  max-width: 600px;
+  padding: 1px
+}
+#foto1{
+  max-width: 500px;
+  padding: 4px;
+}
+.lastbox{
+  border-radius: 5px;
+  margin-top: 5%;
+  border: 1px solid black;
+  text-align: center;
+}
+.caixa2, .bloco {
+  padding: 30px;
+  border: 1px solid black;
+  width: 40%;
+  display: inline-block;
+  vertical-align: top;
+  margin: 1%;
+}
+aside {
+  left: 87%;
+  top: 30%;
+  position: fixed;
+}
+main{
+  border-radius: 8px; 
+  background-color:rgba(255, 255, 255, 0.459);
+}
