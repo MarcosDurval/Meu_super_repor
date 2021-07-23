@@ -1,0 +1,9 @@
+.pokeCard{
+  
+}
+.divPoke {
+ display: flex;
+ margin-left: 5%;
+ border: 1px solid black;
+ text-align: center;
+}
