@@ -1,0 +1,1 @@
+SELECT JOB_ID, round((MAX_SALARY + MIN_SALARY) / 2) as Média_Salarial FROM hr.jobs ORDER BY Média_Salarial DESC;
