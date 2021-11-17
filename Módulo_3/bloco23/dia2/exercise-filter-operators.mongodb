@@ -1,0 +1,8 @@
+use('business');
+//Selecione e faça a contagem dos restaurantes presentes nos bairros Queens , Staten Island e Bronx . (utilizando o atributo borough )
+use('business');
+db.restaurants.find({borough:{$in:['Bronx','Queens','Staten Island']}}).count();
+
+//Selecione e faça a contagem dos restaurantes que não possuem culinária do tipo American . (utilizando o atributo cuisine );
+use('business');
+db.restaurants.find({cuisine:{$nin:['American']}}).count()

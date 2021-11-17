@@ -1,0 +1,23 @@
+db.filmes.find({$and:[ {diretor:{$eq:'Quentin Tarantino'} }, {'avaliacao.bom':{$gte: 5}},{'avaliacao.bom':{$lte:10}}]});
+
+//questão2
+db.filmes.find({$and:[{ano:2014}, {'avaliacao.ruim':{$nin:[10,9,8,7,6,5]}}]})
+
+//questão 3
+
+db.filmes.find({diretor:{$in:['Christopher Nolan','Peter Jackson']}})
+
+//questão 4
+db.filmes.find({$and: [{$nor:[{ano:{$eq:1989}},{titulo:{$eq:'Indiana Jonese a Última Cruzada'}}]},{diretor:'Steven Spielberg'}]} )
+
+//questão 5
+
+db.filmes.find({titulo: 'Um Lugar Silencioso 2'})
+//questão 6
+db.filmes.find({diretor:{$exists: false}})
+// questão 7 consulta gabarito
+db.filmes.find({},{'avaliacao.ruim': 0, 'avaliacao.medio': 0}).sort({diretor: 1},{titulo: 1},{ano: -1},{'avaliacao.bom': -1})
+//questão  8
+db.filmes.deleteMany({diretor: 'Quentin Tarantino'});
+//questão 9
+db.filmes.countDocuments({diretor: 'Quentin Tarantino'}) // resultado esperado zero aṕos a remoção do Quentin
