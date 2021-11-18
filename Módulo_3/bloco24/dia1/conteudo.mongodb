@@ -1,0 +1,62 @@
+use("conteudo_trybe");
+db.inventory.find() //primeiro campo condição segundo campo o novo valor 
+db.inventory.updateMany({"qty":{$lt:50}},
+{$set:{"size.oum":"in",status:"P"}})
+
+
+use ("conteudo_trybe");
+db.products.insertOne(
+  {
+   name: { first: "Alan", last: "Turing" },
+   contact: { phone: { type: "cell", number: "111-222-3333" } },
+}
+);
+
+//$mul multiplica o valor base pelo valor inserido ("valor base se refere ao valor existente")
+use("conteudo_trybe");
+db.products.find()
+use("conteudo_trybe")
+db.products.updateOne(
+  { _id: 1 },
+  { $mul: { "price.NumberDecimal":5, qty: 2 } }
+);
+//$inc incremento e decremento valor base + ou - valor inserido
+// em caso de realização do decremento usa-se operador "-"
+
+use("conteudo_trybe");
+db.tags.insertOne(
+  {
+    _id: 1,
+    desc: "crafts",
+    dateEntered: ISODate("2019-10-01T05:00:00Z"),
+    dateExpired: ISODate("2019-10-01T16:38:16Z")
+  }
+);
+
+use("conteudo_trybe");
+db.tags.find({})
+db.tags.update(
+  { _id: 1 },
+  {
+$min: { dateEntered: new Date("2019-09-25") },
+$max: { dateExpired: new Date("2019-10-02") }
+  }
+);
+
+use("conteudo_trybe");
+db.fruits.find({})
+// db.fruits.insertOne(
+//   { _id: 100, name: "Banana", quantity: 100, inStock: true }
+// );
+db.fruits.updateMany(
+  { productName: "Banana" },
+  { $unset: { inStock: 0 } }
+);
+db.fruits.updateOne(
+  { name: "Banana" },
+  { $rename: {
+      "name": "productName",
+      "quantity":"quantidade"
+    }
+  }
+);
