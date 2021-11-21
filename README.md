@@ -1,1 +1,1 @@
-## Este Repositório contém os exercicios de algumas aulas vistas na Trybe :desktop_computer:
+## Este Repositório contém os exercícios de algumas aulas vistas na Trybe :desktop_computer:
