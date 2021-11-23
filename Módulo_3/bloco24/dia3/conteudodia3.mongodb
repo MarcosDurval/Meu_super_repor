@@ -1,0 +1,3 @@
+db.exemplotrybe.find({
+  $expr:{$lt:["$spent", "$budget"]}
+})
