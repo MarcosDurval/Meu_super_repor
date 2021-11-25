@@ -48,3 +48,7 @@ podendo ser passado o comando rm -f para força a remoção do container
 
 docker container prune
 
+Monitorando os processos dentro de um container :
+
+
+docker container top <CONTAINER ID || NAMES>
