@@ -1,0 +1,50 @@
+link para documentação official: https://docs.docker.com/engine/reference/commandline/docker/
+
+#Comandos:
+
+Criar e rodar um container:  docker container run <parâmetros> <imagem>:<tag>
+
+dessa forma podemos definir um nome: docker container run --name <nome-da-sua-escolha> <imagem>:<tag> 
+
+
+Modo 'Cleanup': O parâmetro --rm deve garantir que o container seja removido ao final da execução
+(útil para testar imagens sem ficar acumulando containers novos) : docker container run --rm <imagem>:<tag>
+
+O parâmetro -d (de --detach , desacoplado em português) rodará esse container em segundo plano*:
+
+#Criar um container sem executá-lo
+
+docker container create <parâmetros> <imagem>:<tag> 
+
+criando de forma interativa:
+docker container create -it <imagem>:<tag>
+
+#Listar containers
+ 
+lista todos os containers ativos: docker container ls
+lista todos os containers ativos e inativos também: docker container ls -a 
+
+#Lista o último container criado (independente do seu estado) : docker container ls -l
+
+Iniciando um container : docker container start <CONTAINER ID || NAMES>
+Restart em um container: docker container restart <container ID || NAMES >
+pausar um container : --- ---- pause ---
+remover um container da pausa: --- --- unpause ---
+stop em um container: ----- ---- stop ---- (diferença da pause pro stop está na alocação de recursos quando um container
+ é pausado  ele ainda continua usando os recursos )
+
+=======================================================================
+
+#Retomando o acesso a um container interativo rodando em segundo plano:
+
+docker container attach <CONTAINER ID || NAMES>
+
+#Excluindo containers específicos
+
+docker container rm <CONTAINER ID || NAMES> 
+podendo ser passado o comando rm -f para força a remoção do container
+
+#Limpando containers que não estão sendo utilizados
+
+docker container prune
+
