@@ -1,0 +1,42 @@
+### docekrfile documentação : https://docs.docker.com/engine/reference/builder/
+# O que são imagens?
+
+Imagens Docker são arquivos que funcionam como espécies de fotos de programas, bibliotecas,
+frameworks ou mesmo sistemas operacionais, a partir das quais construimos containers e executamos códigos
+dentro do Docker.
+
+listando as imagens que forma baixadas em algum momento:
+
+docker images
+
+## ponto de atenção uma mesma imagem pode estar em varios containers
+
+# Apagando imagens docker; 
+  docker rmi -f < ID || NAME >
+
+  docker image rm -f < ID || NAME >
+
+Usando o prune para deletar (esse comando deleta todas as imagens que não estão sendo ultilizadas):
+  docker image prune -a
+
+documentação :
+  https://docs.docker.com/engine/reference/commandline/image_prune/
+
+##  É importante ressaltar que ao excluir uma imagem, os containers gerados a partir dela não serão 
+excluídos, apenas ficaram órfãos das camadas da imagem que a utilizavam para executar suas funções.
+
+## anotação ## Uma vez que a imagem é baixada o docker reaproveita caso tenha que ultilizar ela novamente.
+
+## Mapeando portas  o comando -P faz o mapeando de portas de forma automática:
+ com o comando -p podemos fazer o mapeamento manual da porta exemplo: 
+ docker container run -d -p 54321:80 httpd:2.4 e com o mapeamento automático ficaria da  seguinte forma:
+ docker container run -d -P httpd:2.4
+ o " -d " que esta sendo ultizado nos dois comandos é para que o comando seja executado em background
+
+Nesse exemplo, mapeamos a porta 54321 do nosso computador à porta 80 do container. Agora podemos acessar o 
+site estático mantido pelo servidor Apache acessando o endereço http://localhost:54321 no navegador.
+
+
+### multi-stage build 
+  nada mais é que dividir o script do Dockerfile e mais de uma parte.
+  Para saber mais sobre o multi-stage build , acesse o link oficial da documentação.
