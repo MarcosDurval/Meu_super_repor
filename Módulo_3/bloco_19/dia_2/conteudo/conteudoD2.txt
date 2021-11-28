@@ -1,3 +1,4 @@
+### docekrfile documentação : https://docs.docker.com/engine/reference/builder/
 # O que são imagens?
 
 Imagens Docker são arquivos que funcionam como espécies de fotos de programas, bibliotecas,
