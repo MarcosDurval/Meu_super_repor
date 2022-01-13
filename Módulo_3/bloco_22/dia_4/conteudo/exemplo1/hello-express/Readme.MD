@@ -1,0 +1,1 @@
+NUNCA USAR O NODEMOM PARA O USUARIO FINAL POIS QUALQUER ALTERAÇÃO NOS ARQUIVOS vai ocasionar a reinicialização da mesma
