@@ -19,8 +19,7 @@ class Estudantes {
     return (mediaPondera/notas.length).toFixed(2)
   }
   soma(){
-    const notas = [...this.notas,...this.trabalho]
-    return notas.reduce((acc,curr) => acc + curr)
+    return [...this.notas,...this.trabalho].reduce((acc,curr) => curr + acc)
   }
 }
 

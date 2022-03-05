@@ -1,15 +1,13 @@
-interface PedidosDTO{
+export interface PedidosDTO{
   produto:string,
   preco:number
 }
-export class Pedidos{
-  pedido:PedidosDTO[]
-  constructor(pedido:PedidosDTO[]){
+export default class itemPedido{
+  pedido:PedidosDTO
+  constructor(pedido:PedidosDTO){
     this.pedido = pedido
   }
-  adicionarPedido(parament:PedidosDTO){
-    this.pedido.push(parament)
-  }
+  
 }
 
 

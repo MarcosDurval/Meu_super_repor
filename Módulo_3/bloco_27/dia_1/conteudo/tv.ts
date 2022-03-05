@@ -4,12 +4,12 @@ class Tvs {
   private _resolution : number
   private _connections:string[]
   private _connectedTo:string
-  constructor(b:string,s:number,r:number,c:string[],connectedTo:string) {
+  constructor(b:string,s:number,r:number,c:string[]) {
     this._connections = c
     this._brand = b
     this._size = s 
     this._resolution = r
-    this._connectedTo = connectedTo
+    this._connectedTo = ""
   }
 
   turnOn(){
@@ -29,7 +29,7 @@ class Tvs {
     }
   }
   
-  public set connectedTo(connectedTo : string) {
+  public newConexão(connectedTo : string) {
     if(this._connections.includes(connectedTo)){
        this._connectedTo = connectedTo
     }else{
@@ -39,7 +39,8 @@ class Tvs {
   
 }
 
-const tv1 = new Tvs("toshiba",40,1080,["HDMI", "Ethernet"],'xablau')
+const tv1 = new Tvs("toshiba",40,1080,["HDMI", "Ethernet"])
 tv1.turnOn()
-tv1.connectedTo = "HDMI"
+console.log("conexão:", tv1.connectedTo)
+tv1.newConexão("valor")
 console.log("connect:",tv1.connectedTo) 
