@@ -2,7 +2,7 @@
 
 class Estudantes {
   matricula:string
-  nome: string
+  private _nome: string = ""
   notas: number[]
   trabalho:number[]
 
@@ -12,6 +12,16 @@ class Estudantes {
     this.notas = notas,
     this.trabalho = trabalho
   }
+  
+  
+  public set nome(v : string) {
+    console.log(v)
+    if(this.nome !== "o brabo"){
+      throw new Error("não é brabo")
+    }
+    this._nome = this.nome
+  }
+  
 
   media(){
     const notas = [...this.notas,...this.trabalho]
