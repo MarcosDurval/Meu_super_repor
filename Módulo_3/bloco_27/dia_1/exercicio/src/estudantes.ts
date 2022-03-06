@@ -1,6 +1,6 @@
 
 
-class Estudantes {
+export default class Estudantes {
   matricula:string
   private _nome: string = ""
   notas: number[]
