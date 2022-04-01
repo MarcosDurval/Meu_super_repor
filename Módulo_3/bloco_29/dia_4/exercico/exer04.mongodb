@@ -1,0 +1,12 @@
+// Exercício 4 : Aumente em 2 o imdbRating do filme Batman .
+
+use('filmes')
+
+db.list.updateOne(
+  {
+    title:'Batman'
+  },
+  {
+    $inc:{imdbRating:2}
+  }
+)
