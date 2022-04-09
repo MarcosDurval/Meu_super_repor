@@ -1,0 +1,16 @@
+// Exercício 12 : Utilizando uma única operação, 
+// remova os campos budget e 
+// estimatedBudget em todos os documentos.
+
+use('filmes')
+
+db.list.updateMany({},
+  {
+    /**
+     * Provide the field name to exclude.
+     * To exclude multiple fields, pass the field names in an array.
+     */
+    $unset: {budget:'',estimatedBudget:''}
+  }
+
+)
