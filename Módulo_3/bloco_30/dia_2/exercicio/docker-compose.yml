@@ -1,0 +1,25 @@
+  version: '3.9'
+
+
+  services:
+  
+    backend:
+      container_name: backend_teste
+      build: .
+      ports: 
+      - "3001:3001"
+      volumes:
+      - '.:/back'
+      # healthcheck:
+      # test: ["CMD", "lsof", "-t", "-i:3001"] # Caso utilize outra porta interna para o back, altere ela aqui também
+      # timeout: 10s
+      # retries: 5
+      depends_on:
+        - mongo
+
+    mongo:
+      container_name: mongoDB_exer
+      image: mongo:4.4-focal
+      ports: 
+      - "27017:27017"
+      restart: always
