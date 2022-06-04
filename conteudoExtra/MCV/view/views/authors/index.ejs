@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+  <head>
+    <title>MVC - Exemplo</title>
+  </head>
+  <body>
+    <form action="/authors" method="POST">
+      <label for="first_name">Nome:</label>
+      <input id="first_name" name="file" type="file" />
+      <button type="submit">Enviar!</button>
+    </form>
+    <ul>
+      <%if(testes.length !== 0) testes.forEach((teste) => { %>
+        <li> <%= teste.image %></li>
+      <% }) %>
+    </ul>
+  </body>
+</html>

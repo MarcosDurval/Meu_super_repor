@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <title> Input</title>
+  </head>
+  <body>
+    <form action="/files/upload" method="POST" enctype="multipart/form-data">
+      <label>
+        Arquivo
+        <input type="file" name="file" required>
+      </label>
+      <button type="submit">enviar</button>
+    </form>
+    <ul>
+      <%if(teste){ %>
+        <% teste.forEach((test) => {%>
+          <li>
+            <a href=<%=`${test.location}`%> download="xablau">
+              <p><%=test.name%></p>
+            </a>
+          </li>
+        <% })%>
+      <% } %>
+    </ul>
+  </body>
+</html>

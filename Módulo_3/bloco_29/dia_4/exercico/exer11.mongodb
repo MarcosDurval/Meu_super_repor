@@ -1,0 +1,16 @@
+// Utilizando uma única operação, crie um campo chamado sequels 
+// e atribua a ele o valor 0 em todos os documentos.
+
+use('filmes')
+
+db.list.updateMany({},
+  {
+    /**
+     * field: The field name
+     * expression: The expression.
+     */
+    $set: {
+      sequels: 0
+    }
+  }
+)

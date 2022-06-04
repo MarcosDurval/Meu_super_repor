@@ -12,7 +12,7 @@ export interface IOpsInfo { createdPlants: number }
 export interface ModelCrud<T>{
   getAll():Promise< T[]> 
  
-  getById(id:string):void
+  getById(id:string): Promise <T | null> 
 
   deleteById(id:string):void
 
