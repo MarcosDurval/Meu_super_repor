@@ -1,3 +1,13 @@
-module.exports = (_req, res) => {
-  res.status(200).json({ message: 'Pong!' });
+const model = require('../models/infos');
+
+const create = async (file) => {
+  const { key, originalname: name, location } = file;
+  await model.create({ location, name, key });
+};
+
+const get = async () => model.get();
+
+module.exports = {
+  create,
+  get,
 };

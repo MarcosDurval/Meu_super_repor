@@ -1,20 +1,22 @@
-const { MongoClient } = require('mongodb');
+const mongoose = require('mongoose');
 
-const OPTIONS = {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-};
+const { Schema } = mongoose;
 
 const { MONGO_DB_URL } = process.env;
 
-let db = null;
+const info = new Schema({
+  key: String,
+  name: String,
+  location: String,
+});
 
-const connection = () =>
-  (db
-    ? Promise.resolve(db)
-    : MongoClient.connect(MONGO_DB_URL, OPTIONS).then((conn) => {
-        db = conn.db('model_example');
-        return db;
-      }));
+const connection = async () => {
+  mongoose.connect(MONGO_DB_URL, { useNewUrlParser: true });
+};
 
-module.exports = connection;
+const ModelInfos = mongoose.model('info', info);
+
+module.exports = {
+  connection,
+  ModelInfos,
+};

@@ -1,53 +1,40 @@
-require('dotenv').config();
 const path = require('path');
 const express = require('express');
-const cors = require('cors');
+// const cors = require('cors');
 const bodyParser = require('body-parser');
-const multer = require('multer');
-
-const { PORT } = process.env;
-
-const controllers = require('./controllers');
+const controllers = require('./controllers/ping');
 const middlewares = require('./middlewares');
+
+// const { PORT } = process.env;
 
 const app = express();
 
-app.use(
-  cors({
-    origin: `http://localhost:${PORT}`,
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Authorization'],
-  }),
-);
+app.set('view engine', 'ejs');
+app.set('views', './views');
 
-const isValid = (file) => {
-  console.log(file.mimetype.endsWith('png'));
-  if (file.mimetype.endsWith('png')) {
-    return false;
-  }
-  return true;
-};
-
-const storage = multer.diskStorage({
-  destination: (req, file, callback) => {
-    if (isValid(file)) return callback(null, path.resolve(__dirname, 'uploads/'));
-  },
-  filename: (req, file, callback) => { 
-    callback(null, `${Date.now()}-${file.originalname}`);
-  },
-});
+// app.use(
+//   cors({
+//     origin: `http://localhost:${PORT}`,
+//     methods: ['GET', 'POST', 'PUT', 'DELETE'],
+//     allowedHeaders: ['Authorization'],
+//   }),
+// );
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(path.resolve(__dirname, '/', 'uploads')));
+app.use(express.static(path.resolve(__dirname, 'uploads')));
 
-const upload = multer({ storage });
+app.get('/files', middlewares.logs, async (req, res) => {
+  console.log(req.log);
+  const teste = await controllers.get();
+  res.render('infos/index', { teste });
+});
 
-app.get('/ping', controllers.ping);
-
-app.post('/files/upload', upload.single('file'), (req, res) => {
+app.post('/files/upload', middlewares.configMulter.single('file'), async (req, res) => {
+  console.log('socket:', req.rawHeaders);
  try {
-   return res.status(200).json({ body: req.body, file: req.file });
+    await controllers.create(req.file);
+   return res.redirect('/files');
  } catch (error) {
    return res.status(400).json({ message: 'deu ruim' });
  }
@@ -55,6 +42,4 @@ app.post('/files/upload', upload.single('file'), (req, res) => {
 
 app.use(middlewares.error);
 
-app.listen(PORT, () => {
-  console.log(`App listening on port ${PORT}`);
-});
+module.exports = app;
