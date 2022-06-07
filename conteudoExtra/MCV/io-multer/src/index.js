@@ -10,7 +10,7 @@ const middlewares = require('./middlewares');
 const app = express();
 
 app.set('view engine', 'ejs');
-app.set('views', './views');
+app.set('views', './src/views');
 
 // app.use(
 //   cors({
@@ -27,7 +27,7 @@ app.use(express.static(path.resolve(__dirname, 'uploads')));
 app.get('/files', middlewares.logs, async (req, res) => {
   console.log(req.log);
   const teste = await controllers.get();
-  res.render('infos/index', { teste });
+  res.render('index', { teste });
 });
 
 app.post('/files/upload', middlewares.configMulter.single('file'), async (req, res) => {
