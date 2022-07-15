@@ -2,3 +2,4 @@ igonre/
 node_modules/
 .env
 .venv/
+__pycache__
